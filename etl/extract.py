@@ -1,4 +1,5 @@
 import pandas as pd
+import geopandas as gpd
 import sidrapy
 
 def extract_populacao():
@@ -29,7 +30,13 @@ def extract_producao_pecuaria():
     return sidra
 
 def extract_biomas():
-    pass
+    sidra = sidrapy.get_table(
+        table_code='7016',
+        territorial_level='123',
+        variable='10476',
+        ibge_territorial_code='all'
+    )
+    return sidra;
 
 def extract_uso_solo():
     sidra = sidrapy.get_table(
@@ -40,13 +47,14 @@ def extract_uso_solo():
     )
     return sidra
 
-def extract_malha_territorial():
-    pass
-
 def extract_clima():
-    pass
+    data = pd.read_csv('data/INMET/INMET_NE_BA_A426_GUANAMBI_01-01-2024_A_31-12-2024.CSV', sep=';', low_memory=False)
+    return data
 
+def extract_malha_territorial():
+    mapa = gpd.read_file("data/BR_Municipios_2025/BR_Municipios_2025.gpkg")
+    return mapa
 
-raw_data = extract_producao_pecuaria()
-raw_data.columns = raw_data.iloc[0]
-print(raw_data.columns)
+def transform_malha_territorial():
+    mapa = gpd.read_file("data/BR_Municipios_2025/BR_Municipios_2025.shp")
+    mapa.to_file("data/BR_Municipios_2025/BR_Municipios_2025.gpkg", driver="GPKG")
