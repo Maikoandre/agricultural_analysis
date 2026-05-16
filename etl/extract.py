@@ -48,7 +48,14 @@ def extract_uso_solo():
     return sidra
 
 def extract_clima():
-    data = pd.read_csv('data/INMET/INMET_NE_BA_A426_GUANAMBI_01-01-2024_A_31-12-2024.CSV', sep=';', low_memory=False)
+    data = pd.read_csv('data/INMET/INMET_NE_BA_A426_GUANAMBI_01-01-2024_A_31-12-2024.CSV', 
+                       encoding="latin1", 
+                       sep=";", 
+                       low_memory=False,
+                       skiprows=8,
+                       decimal=",",
+                       
+            )
     return data
 
 def extract_malha_territorial():
