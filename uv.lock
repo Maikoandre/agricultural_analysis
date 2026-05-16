@@ -36,6 +36,7 @@ dependencies = [
     { name = "dbt-postgres" },
     { name = "geopandas" },
     { name = "requests" },
+    { name = "sidrapy" },
     { name = "sqlalchemy" },
 ]
 
@@ -44,6 +45,7 @@ requires-dist = [
     { name = "dbt-postgres", specifier = ">=1.10.0" },
     { name = "geopandas", specifier = ">=1.1.3" },
     { name = "requests", specifier = ">=2.34.1" },
+    { name = "sidrapy", specifier = ">=0.1.4" },
     { name = "sqlalchemy", specifier = ">=2.0.49" },
 ]
 
@@ -1428,6 +1430,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/7c/75/c24ed871c576d7e2b64b04b1fe3d075157f6eb54e59670d3f5ffb36e25c7/shapely-2.1.2-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:361b6d45030b4ac64ddd0a26046906c8202eb60d0f9f53085f5179f1d23021a0", size = 4169511, upload-time = "2025-09-24T13:51:36.297Z" },
     { url = "https://files.pythonhosted.org/packages/b1/f7/b3d1d6d18ebf55236eec1c681ce5e665742aab3c0b7b232720a7d43df7b6/shapely-2.1.2-cp314-cp314t-win32.whl", hash = "sha256:b54df60f1fbdecc8ebc2c5b11870461a6417b3d617f555e5033f1505d36e5735", size = 1602607, upload-time = "2025-09-24T13:51:37.757Z" },
     { url = "https://files.pythonhosted.org/packages/9a/f6/f09272a71976dfc138129b8faf435d064a811ae2f708cb147dccdf7aacdb/shapely-2.1.2-cp314-cp314t-win_amd64.whl", hash = "sha256:0036ac886e0923417932c2e6369b6c52e38e0ff5d9120b90eef5cd9a5fc5cae9", size = 1796682, upload-time = "2025-09-24T13:51:39.233Z" },
+]
+
+[[package]]
+name = "sidrapy"
+version = "0.1.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pandas" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/25/73/58c3024d754c1497bbf25fe7d63cd4b301c9cf8ae47ca4c1c3f8cfc42a82/sidrapy-0.1.4.tar.gz", hash = "sha256:6a91e0eab7fe4dfb7c8a82c4b5fc9c2eb58d99c1bfe5daf0bf8c47c4bdc431af", size = 7962, upload-time = "2022-09-19T22:18:23.619Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dd/8b/190d75bb78851f0af571925f61843fe70d8d99bb335ac7d5d574818614b8/sidrapy-0.1.4-py3-none-any.whl", hash = "sha256:5a18c999dcbc17772bb062131a798b1eb3185aa5700a4c1d029c8d9eeb629d17", size = 6874, upload-time = "2022-09-19T22:18:21.563Z" },
 ]
 
 [[package]]

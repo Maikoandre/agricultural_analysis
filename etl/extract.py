@@ -1,16 +1,14 @@
-import json
-
 import pandas as pd
-import requests
+import sidrapy
 
+def extract_data():
+    sidra = sidrapy.get_table(
+        table_code='9514', 
+        territorial_level='6',
+        variable='93',
+        ibge_territorial_code='all'
+    )
+    return sidra
 
-def get_data(url: str):
-    request = requests.get(url)
-    return request.json()
-
-
-link = "https://servicodados.ibge.gov.br/api/v2/malhas/35/?resolucao=5&formato=application/vnd.geo+json&qualidade=4"
-
-
-dataset = pd.read_json(json.dumps(get_data(link)))
-dataset.head(2)
+raw_data = extract_data()
+raw_data.head()
