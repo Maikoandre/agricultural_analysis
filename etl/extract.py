@@ -53,8 +53,7 @@ def extract_clima():
                        sep=";", 
                        low_memory=False,
                        skiprows=8,
-                       decimal=",",
-                       
+                       decimal=","        
             )
     return data
 

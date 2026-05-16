@@ -1,0 +1,30 @@
+[0m19:13:27.654361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f452d7d3cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f452d7d3c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f452d433dd0>]}
+
+
+============================== 19:13:27.658089 | 98305e42-ad64-4b05-8da2-0dbe4a48ed33 ==============================
+[0m19:13:27.658089 [info ] [MainThread]: Running with dbt=1.11.10
+[0m19:13:27.658676 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'empty': 'None', 'debug': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'no_print': 'None', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt init transform', 'printer_width': '80', 'use_colors': 'True', 'fail_fast': 'False', 'quiet': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/maiko/.dbt', 'log_path': 'logs'}
+[0m19:13:27.669453 [debug] [MainThread]: Starter project path: /home/maiko/Projects/agricultural_analysis/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m19:13:27.672034 [info ] [MainThread]: 
+Your new dbt project "transform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:13:27.672662 [info ] [MainThread]: Setting up your profile.
+[0m19:13:58.183594 [info ] [MainThread]: Profile transform written to /home/maiko/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m19:13:58.187946 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 30.578024, "process_in_blocks": "80432", "process_kernel_time": 0.136807, "process_mem_max_rss": "113168", "process_out_blocks": "328", "process_user_time": 1.046856}
+[0m19:13:58.189344 [debug] [MainThread]: Command `dbt init` succeeded at 19:13:58.189084 after 30.58 seconds
+[0m19:13:58.190282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f452d4ac9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f45317ce710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4531312f50>]}
+[0m19:13:58.191201 [debug] [MainThread]: Flushing usage events
+[0m19:13:59.099884 [debug] [MainThread]: An error was encountered while trying to flush usage events
