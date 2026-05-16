@@ -20,7 +20,13 @@ def extract_producao_agricola():
     return sidra
 
 def extract_producao_pecuaria():
-    pass
+    sidra = sidrapy.get_table(
+        table_code='74',
+        territorial_level='6',
+        variable='106',
+        ibge_territorial_code='all'
+    )
+    return sidra
 
 def extract_biomas():
     pass
@@ -41,6 +47,6 @@ def extract_clima():
     pass
 
 
-raw_data = extract_uso_solo()
+raw_data = extract_producao_pecuaria()
 raw_data.columns = raw_data.iloc[0]
 print(raw_data.columns)
