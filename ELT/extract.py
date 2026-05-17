@@ -59,7 +59,6 @@ def extract_clima():
         skiprows=8,
         low_memory=False,
     )
-
     return data
 
 def extract_malha_territorial():
