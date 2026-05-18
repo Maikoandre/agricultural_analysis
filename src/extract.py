@@ -47,9 +47,6 @@ def extract_uso_solo():
     )
     return sidra
 
-import pandas as pd
-
-
 def extract_clima():
     data = pd.read_csv(
         "data/INMET/INMET_NE_BA_A426_GUANAMBI_01-01-2024_A_31-12-2024.CSV",
