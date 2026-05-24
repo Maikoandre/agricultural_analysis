@@ -1,6 +1,5 @@
 # 🌵 Expansão Agrícola e Impacto Ambiental na Caatinga
 
-[![dbt CI](https://github.com/Maikoandre/agricultural_analysis/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/Maikoandre/agricultural_analysis/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 
