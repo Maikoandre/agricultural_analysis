@@ -48,42 +48,6 @@ O fluxo de dados seguirá a filosofia **ELT moderna**, onde a extração e a car
   <img src="assets/Untitled-2026-05-13-0814.png" alt="Arquitetura do Projeto" width="100%">
 </p>
 
-```mermaid
-flowchart LR
-    subgraph Fontes["🌐 Fontes de Dados"]
-        IBGE["IBGE SIDRA (APIs)"]
-        MB["MapBiomas (CSVs/GeoJSONs)"]
-        INMET["INMET (Estações Históricas)"]
-        Vector["Malha Territorial (GeoPack/Shapefile)"]
-    end
-
-    subgraph EL["📥 Extração & Carga (Python)"]
-        Ext["extract.py (Requests/Sidrapy)"]
-        Load["load.py (GeoPandas / SQLAlchemy)"]
-    end
-
-    subgraph DB["💾 Armazenamento (PostgreSQL + PostGIS)"]
-        Raw["Camada RAW (Esquema Public)"]
-    end
-
-    subgraph AE["🏗️ Analytics Engineering (dbt - Em Desenvolvimento)"]
-        Stg["Camada STAGING (Limpeza/Tipagem)"]
-        Marts["Camada MARTS (Métricas/Geometrias/Fatos)"]
-    end
-
-    subgraph Visualizacao["📊 Camada de Consumo (Futura)"]
-        Metabase["Metabase (Dashboards)"]
-        Marimo["Marimo (EDA Notebooks)"]
-    end
-
-    Fontes --> Ext
-    Ext --> Load
-    Load --> Raw
-    Raw --> Stg
-    Stg --> Marts
-    Marts --> Metabase
-    Marts --> Marimo
-```
 
 ---
 
@@ -91,12 +55,11 @@ flowchart LR
 
 *   **Linguagem Principal**: [Python 3.11+](https://www.python.org/)
 *   **Ingestão de Dados**: [Pandas](https://pandas.pydata.org/) & [GeoPandas](https://geopandas.org/) (carga geométrica inicial via SQLAlchemy/GeoAlchemy2)
-*   **Interface de APIs**: [sidrapy](https://github.com/mpeixer/sidrapy) (Cliente oficial da API SIDRA do IBGE)
-*   **Interface de Notebooks**: [marimo](https://marimo.io/) (Notebooks analíticos reativos salvos em `.py` puro)
+*   **Interface de APIs**: [Sidrapy](https://github.com/AlanTaranti/sidrapy) (Cliente oficial da API SIDRA do IBGE)
+*   **Interface de Notebooks**: [Marimo](https://marimo.io/) (Notebooks analíticos reativos salvos em `.py` puro)
 *   **Banco de Dados**: [PostgreSQL 16+](https://www.postgresql.org/) com extensão espacial [PostGIS 3+](https://postgis.net/)
 *   **Transformação e Modelagem**: [dbt-core](https://www.getdbt.com/) com adaptador `dbt-postgres` (a ser implementado)
-*   **Infraestrutura**: [Docker & Docker Compose](https://www.docker.com/) (Instanciação do banco PostGIS)
-*   **CI/CD**: [GitHub Actions](https://github.com/features/actions) (Planejado para testes automáticos de qualidade de dados)
+*   **Infraestrutura**: [Docker & Docker Compose](https://www.docker.com/) (Instanciação do banco PostGIS e Metabase)
 
 ---
 
