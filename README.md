@@ -41,42 +41,7 @@ Este projeto busca fornecer uma **plataforma analítica geoespacial e estruturad
 
 O fluxo de dados segue a filosofia **ELT moderna**, onde toda a transformação pesada e a modelagem geométrica são delegadas ao banco de dados utilizando **dbt** e **PostGIS**.
 
-```mermaid
-flowchart LR
-    subgraph Fontes["🌐 Fontes de Dados"]
-        IBGE["IBGE SIDRA (APIs)"]
-        MB["MapBiomas (CSVs/GeoJSONs)"]
-        INMET["INMET (Estações Históricas)"]
-        Vector["Malha Territorial (GeoPack/Shapefile)"]
-    end
-
-    subgraph EL["📥 Extração & Carga (Python)"]
-        Ext["extract.py (Requests/Sidrapy)"]
-        Load["load.py (GeoPandas / SQLAlchemy)"]
-    end
-
-    subgraph DB["💾 Armazenamento (PostgreSQL + PostGIS)"]
-        Raw["Camada RAW (Esquema Public)"]
-    end
-
-    subgraph AE["🏗️ Analytics Engineering (dbt)"]
-        Stg["Camada STAGING (Limpeza/Tipagem)"]
-        Marts["Camada MARTS (Métricas/Geometrias/Fatos)"]
-    end
-
-    subgraph Visualizacao["📊 Camada de Consumo"]
-        Metabase["Metabase (Dashboards)"]
-        Marimo["Marimo (EDA Notebooks)"]
-    end
-
-    Fontes --> Ext
-    Ext --> Load
-    Load --> Raw
-    Raw --> Stg
-    Stg --> Marts
-    Marts --> Metabase
-    Marts --> Marimo
-```
+<img scr='assets/Untitled-2026-05-13-0814.png'>
 
 ---
 
