@@ -11,12 +11,24 @@ O projeto adotará uma abordagem moderna de **ELT (Extract, Load, Transform)**, 
 
 ---
 
-## 🔮 Próximos Passos & Melhorias Futuras
+## 🔮 Progresso do Projeto & Próximos Passos
 
-- [ ] **Modelagem dbt Completa**: Desenvolver todas as queries SQL de staging e marts para limpar as tabelas `raw_` geradas pela carga Python.
-- [ ] **Cruzamentos Espaciais complexos no dbt**: Implementar as macros e views espaciais no dbt utilizando funções PostGIS.
-- [ ] **Configuração do Metabase**: Conectar o container do Metabase à camada analítica final (`marts/`) para estruturação dos painéis interativos.
-- [ ] **CI/CD Automático**: Habilitar a validação automática (Pull Request/Push) dos modelos dbt no GitHub Actions usando banco de testes temporário.
+O desenvolvimento do projeto é feito de forma estruturada e incremental. Abaixo está a lista detalhada do que já foi consolidado e o que está planejado para as próximas etapas:
+
+### ✅ O que já foi feito (Progresso Atual)
+- [x] **Configuração de Infraestrutura**: Setup do banco de dados geográfico através do container Docker do PostgreSQL com suporte espacial **PostGIS** rodando na porta local `5433`.
+- [x] **Setup do Ambiente Python**: Configuração moderna do empacotamento com `pyproject.toml` e lockfile `uv.lock` integrados para instalações isoladas e rápidas via gerenciador de pacotes **uv**.
+- [x] **Pipeline de Extração (E)**: Desenvolvimento do script `src/extract.py` que consulta as APIs oficiais do IBGE SIDRA (População, Produção Agrícola, Pecuária, Uso do Solo e Biomas) via cliente `sidrapy`, lê as malhas espaciais e importa séries históricas de clima locais do INMET.
+- [x] **Pipeline de Carga (L)**: Script de automação em `src/load.py` para carregamento rápido dos dados tabulares e de geometrias vetoriais georreferenciadas na camada bruta (`raw_`) usando SQLAlchemy e a engine `to_postgis` do GeoPandas.
+- [x] **Notebook de EDA (Análise Exploratória)**: Criação do notebook científico reativo em `src/notebooks/regiao_gbi.py` utilizando a biblioteca **marimo** para exploração inicial de séries de desmatamento da Região Geográfica Imediata (RGI) de Guanambi.
+- [x] **Qualidade e Refatoração de Código**: Resolução de silent-bugs do Pandas (no-ops de renomeações/conversões de tipo não persistidos) e neutralização de falsos positivos de variáveis do Pylance devido ao escopo dinâmico do Marimo.
+
+### 🚀 O que ainda falta fazer (Próximos Passos)
+- [ ] **Modelagem dbt Completa**: Desenvolver todas as queries SQL modulares de Staging (`models/staging/`) para limpar, tipar e normalizar as tabelas de origem bruta na pasta do projeto dbt.
+- [ ] **Cruzamentos Espaciais no dbt**: Codificar queries analíticas geográficas intermediárias (`models/intermediate/`) usando as funções espaciais do PostGIS (como intersecções `ST_Intersection` e cálculo de áreas de vegetação).
+- [ ] **Tabelas de Fato e Dimensões (Marts)**: Estruturar as tabelas analíticas finais (`models/marts/`) agregando as métricas históricas de produção agrícola/pecuária integradas com o histórico de supressão vegetal municipal.
+- [ ] **Configuração do Metabase**: Adicionar a imagem do Metabase ao arquivo `docker-compose.yml`, conectá-la ao banco de dados e construir painéis/gráficos geoespaciais integrados com as geometrias dos municípios da Caatinga.
+- [ ] **Automação de CI/CD**: Configurar o workflow `.github/workflows/dbt_ci.yml` para compilar e testar automaticamente os modelos dbt nas submissões do GitHub.
 
 ---
 
