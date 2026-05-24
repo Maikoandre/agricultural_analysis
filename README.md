@@ -21,7 +21,6 @@ O desenvolvimento do projeto é feito de forma estruturada e incremental. Abaixo
 - [x] **Pipeline de Extração (E)**: Desenvolvimento do script `src/extract.py` que consulta as APIs oficiais do IBGE SIDRA (População, Produção Agrícola, Pecuária, Uso do Solo e Biomas) via cliente `sidrapy`, lê as malhas espaciais e importa séries históricas de clima locais do INMET.
 - [x] **Pipeline de Carga (L)**: Script de automação em `src/load.py` para carregamento rápido dos dados tabulares e de geometrias vetoriais georreferenciadas na camada bruta (`raw_`) usando SQLAlchemy e a engine `to_postgis` do GeoPandas.
 - [x] **Notebook de EDA (Análise Exploratória)**: Criação do notebook científico reativo em `src/notebooks/regiao_gbi.py` utilizando a biblioteca **marimo** para exploração inicial de séries de desmatamento da Região Geográfica Imediata (RGI) de Guanambi.
-- [x] **Qualidade e Refatoração de Código**: Resolução de silent-bugs do Pandas (no-ops de renomeações/conversões de tipo não persistidos) e neutralização de falsos positivos de variáveis do Pylance devido ao escopo dinâmico do Marimo.
 
 ### 🚀 O que ainda falta fazer (Próximos Passos)
 - [ ] **Modelagem dbt Completa**: Desenvolver todas as queries SQL modulares de Staging (`models/staging/`) para limpar, tipar e normalizar as tabelas de origem bruta na pasta do projeto dbt.
@@ -277,4 +276,4 @@ Este projeto será de código aberto e disponibilizado sob a licença **MIT**. V
 
 ---
 
-Desenvolvido por [Maiko André](https://github.com/Maikoandre) como projeto de portfólio profissional de **Geospatial Analytics & Analytics Engineering** em andamento. Feedbacks, sugestões de análises ecológicas e contribuições são muito bem-vindos! 🌵🌎
+Desenvolvido por [Maiko André](https://github.com/Maikoandre) como projeto de portfólio profissional de **Geospatial Analytics & Analytics Engineering** em andamento. Feedbacks, sugestões de análises ecológicas e contribuições são muito bem-vindos! 🌎
