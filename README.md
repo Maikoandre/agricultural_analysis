@@ -12,6 +12,15 @@ O projeto adotará uma abordagem moderna de **ELT (Extract, Load, Transform)**, 
 
 ---
 
+## 🔮 Próximos Passos & Melhorias Futuras
+
+- [ ] **Modelagem dbt Completa**: Desenvolver todas as queries SQL de staging e marts para limpar as tabelas `raw_` geradas pela carga Python.
+- [ ] **Cruzamentos Espaciais complexos no dbt**: Implementar as macros e views espaciais no dbt utilizando funções PostGIS.
+- [ ] **Configuração do Metabase**: Conectar o container do Metabase à camada analítica final (`marts/`) para estruturação dos painéis interativos.
+- [ ] **CI/CD Automático**: Habilitar a validação automática (Pull Request/Push) dos modelos dbt no GitHub Actions usando banco de testes temporário.
+
+---
+
 ## 🗺️ 1. Introdução
 
 A **Caatinga** ocupa cerca de 10% do território nacional e abriga uma rica biodiversidade adaptada ao clima semiárido. Contudo, frentes de expansão agrícola e pecuária têm avançado sobre suas florestas secas. Este avanço, muitas vezes desordenado, causa fragmentação de habitats, perda de solo e acelera processos de desertificação.
@@ -251,16 +260,7 @@ dbt test
 
 ---
 
-## 🔮 13. Próximos Passos & Melhorias Futuras
-
-- [ ] **Modelagem dbt Completa**: Desenvolver todas as queries SQL de staging e marts para limpar as tabelas `raw_` geradas pela carga Python.
-- [ ] **Cruzamentos Espaciais complexos no dbt**: Implementar as macros e views espaciais no dbt utilizando funções PostGIS.
-- [ ] **Configuração do Metabase**: Conectar o container do Metabase à camada analítica final (`marts/`) para estruturação dos painéis interativos.
-- [ ] **CI/CD Automático**: Habilitar a validação automática (Pull Request/Push) dos modelos dbt no GitHub Actions usando banco de testes temporário.
-
----
-
-## 📄 14. Licença
+## 📄 13. Licença
 
 Este projeto será de código aberto e disponibilizado sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
