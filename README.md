@@ -36,12 +36,12 @@ O fluxo de dados seguirá a filosofia **ELT moderna**, onde a extração e a car
 ## 🛠️ 5. Stack Tecnológica
 
 *   **Linguagem Principal**: [Python 3.11+](https://www.python.org/)
-*   **Ingestão de Dados**: [Pandas](https://pandas.pydata.org/) & [GeoPandas](https://geopandas.org/) (carga geométrica inicial via SQLAlchemy/GeoAlchemy2)
-*   **Interface de APIs**: [Sidrapy](https://github.com/AlanTaranti/sidrapy) (Cliente oficial da API SIDRA do IBGE)
-*   **Interface de Notebooks**: [Marimo](https://marimo.io/) (Notebooks analíticos reativos salvos em `.py` puro)
+*   **Ingestão de Dados**: [Pandas](https://pandas.pydata.org/) & [GeoPandas](https://geopandas.org/)
+*   **Interface de APIs**: [Sidrapy](https://github.com/AlanTaranti/sidrapy)
+*   **Interface de Notebooks**: [Marimo](https://marimo.io/)
 *   **Banco de Dados**: [PostgreSQL 16+](https://www.postgresql.org/) com extensão espacial [PostGIS 3+](https://postgis.net/)
-*   **Transformação e Modelagem**: [dbt-core](https://www.getdbt.com/) com adaptador `dbt-postgres` (a ser implementado)
-*   **Infraestrutura**: [Docker & Docker Compose](https://www.docker.com/) (Instanciação do banco PostGIS e Metabase)
+*   **Transformação e Modelagem**: [dbt-core](https://www.getdbt.com/)
+*   **Infraestrutura**: [Docker & Docker Compose](https://www.docker.com/)
 
 ## 📊 6. Fontes de Dados Planejadas
 
